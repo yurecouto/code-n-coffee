@@ -1,0 +1,581 @@
+/* Main settings */
+
+body {
+    background-color: black;
+    margin: 0%;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    font-family: Hack;
+}
+
+@font-face {
+    font-family: Hack;
+    src: url(../fonts/Hack-Regular.ttf);
+}
+
+/* Header settings*/
+
+header {
+    width: 100%;
+    background: #1E1E1E;
+    margin-top: 0px;
+    height: 60px;
+    color: #A5A5A5;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.navbar{
+    margin-top: -17px;
+	width: 100%;
+	height: 60px;
+	background: #1E1E1E;
+}
+
+.navbar > ul{
+	display: flex;
+	justify-content: left;	
+}
+
+.navbar ul {
+    margin-left: -40px;
+}
+
+.navbar ul li{
+	position: relative;
+    list-style: none;
+}
+
+.navbar ul li a{
+	display: block;
+    color: #A5A5A5;
+    height: 60px;
+    width: 140px;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li a span {
+    float: left;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar ul > li a{
+	margin-right: 1px;
+}
+
+.navbar ul > li:last-child a{
+	margin-right: 0;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.a_parent.active,
+.navbar .dd_menu ul li a:hover,
+.navbar .dd_menu ul li a.active{
+    width: 180px;
+	background: #A5A5A5;
+    color: #0e0e0e;
+}
+
+.navbar .dd_menu{
+	position: absolute;
+	top: 80px;
+	left: 0;
+	display: none;
+}
+
+.navbar .dd_menu ul li a{
+	width: 180px;
+	background: #0e0e0e; /*submenu*/
+	text-align: left;	
+	padding: 20px;
+}
+
+.navbar .dd_menu:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 70px;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 15px solid;
+    border-color: transparent transparent #0e0e0e transparent; /*Seta vertical*/
+}
+
+.navbar ul li a.a_parent.active + .dd_menu{
+	display: block;
+}
+
+.dd_submenu {
+    position: absolute;
+    top: 0;
+    left: 115%;
+    width: 100%;
+    display: none;
+}
+
+.dd_submenu:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -30px;
+    z-index: 1;
+    border: 15px solid;
+    border-color: transparent #0e0e0e transparent transparent; /*Seta horizontal*/
+}
+
+.navbar ul li a.dd_menu_a.active + .dd_submenu{
+	display: block;
+}
+
+
+.text {
+    font-family: Hack;
+}
+
+/* Navigation settings */
+
+#title {
+    color: #A5A5A5;
+    text-align: center;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+}
+
+#title span {
+    font-size: 20px;
+}
+
+#title a {
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 54px;
+    letter-spacing: 10px;
+    text-decoration: underline;
+}
+
+#title-color{
+    background: -webkit-linear-gradient(-65deg, #3a0ca3, #d71bdd);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+}
+
+.mini-post {
+    margin-top: 35px;
+    background: #1E1E1E;
+    height: 320px;
+    width: 408px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.mini-post-image {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.mini-post-info {
+    width: 305px;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+.mini-post-title {
+    font-size: 20px;
+    color: #A5A5A5;
+    text-decoration: none;
+}
+
+.mini-post-title:hover {
+    text-decoration: underline;
+}
+
+.mini-post-author {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+/*Article settings*/
+
+article {
+    float: right;
+    height: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #A5A5A5;
+    display: block;
+    background: #1E1E1E;
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 72px;
+    color: white;
+    text-align: center;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1.5;
+}
+
+.comments{
+    justify-content: center;
+}
+
+/* ///// inputs /////*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 100%;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.input-container {
+    width: 80%;
+    max-width: 100%;
+    margin-left: 8%;
+    margin-right: 10%;
+    justify-content: center;
+}
+
+.submit-btn {
+    text-align: center;
+    height: 40px;
+    width: 180px;
+    float: right;
+    border-radius: 60px;
+    display: inline-block;
+    background: -webkit-linear-gradient(-65deg, #3a0ca3, #d71bdd);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    padding-top: 15px;
+    margin-right: -54px;
+}
+
+.submit-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+}
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+    }
+}
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}
+
+/* Footer */
+
+footer {
+    height: 100%;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    text-align: center;
+    color: #A5A5A5;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+.footer-icons {
+    margin-left: auto;
+    margin-right: auto;
+    width: 408px;
+    height: 50px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around ;
+}
+
+.footer-icons a {
+    font-size: 24px;
+    color: #A5A5A5;
+    height: 50px;
+    width: 50px; 
+}
+
+.footer-icons a:hover {
+    background: -webkit-linear-gradient(-65deg, #3a0ca3, #d71bdd);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+    height: 50px;
+    width: 50px; 
+}
+
+/* Responsivity settings */
+
+@media screen and (max-width: 1200px) {
+    .post-excert p {
+        margin-left: 35px;
+        margin-right: 35px;
+        height: 80%;
+        margin-top: 0px;
+        font-size: 20px;
+    }
+
+    .post-title {
+        height: 80px;
+        width: 80%;
+        font-size: 28px;
+        font-weight: bolder;
+        float: left;
+        margin-top: 35px;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+    .post-author img {
+        height: 60px;
+        width: 60px;
+        margin-top: 0px;
+        margin-right: 40px;
+        float: right;
+        border-radius: 100%;
+    }      
+}
+
+@media screen and (max-width: 960px) {
+    .navbar ul li a{
+        display: block;
+        color: #A5A5A5;
+        height: 60px;
+        width: 120px;
+        text-align: center;
+        letter-spacing: 2px;
+        transition: all 0.2s ease;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text {
+        font-family: Hack;
+        font-size: 16px;
+    }
+    
+    .navbar ul li a:hover,
+    .navbar ul li a.a_parent.active,
+    .navbar .dd_menu ul li a:hover,
+    .navbar .dd_menu ul li a.active{
+    width: 140px;
+	background: #A5A5A5;
+    color: #0e0e0e;
+    }
+
+    .post-author p {
+        float: right;
+        margin-right: 100px;
+        margin-left: 10px;
+        margin-top: -40px;
+        font-size: 18px;
+    }
+
+    .post-author img {
+        height: 60px;
+        width: 60px;
+        margin-top: 0px;
+        margin-right: 30px;
+        float: right;
+        border-radius: 100%;
+    }
+
+    .post-date p {
+        width: 100%;
+        font-weight: 900;
+        font-size: 18px;
+        float: right;
+        margin-top: 30px;
+        margin-right: -15px;
+        margin-left: 0px;
+        
+    }
+
+    .mini-post {
+        margin-top: 35px;
+        width: 331px;
+        height: 260px;
+        border-radius: 10px;
+        text-align: left;
+    }
+
+    .mini-post-info {
+        width: 70%;
+        margin-top: 10px;
+        margin-left: 10px;
+        float: left;
+    }
+
+    .mini-post-author {
+        height: 35px;
+        width: 35px;
+        border-radius: 100%;
+        float: right;
+        margin-top: 20px;
+        margin-right: 12px;
+    }
+
+    .mini-post-title {
+        font-size: 16px;
+    }
+
+    .author-about {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 768px) {  
+    header {
+        width: 100%;
+        background: #1E1E1E;
+        margin-top: 0px;
+        height: 40px;
+        border-bottom: 1px solid #2d2d2d;
+    }
+
+    .navbar ul li a{
+        display: block;
+        color: #A5A5A5;
+        height: 60px;
+        width: 110px;
+        text-align: center;
+        letter-spacing: 2px;
+        transition: all 0.2s ease;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text {
+        font-family: Hack;
+        font-size: 14px;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.a_parent.active,
+    .navbar .dd_menu ul li a:hover,
+    .navbar .dd_menu ul li a.active{
+    width: 120px;
+	background: #A5A5A5;
+    color: #1E1E1E;
+    }
+
+    #title {
+        text-align: center;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 30px;
+        float: left;
+    }
+
+    article {
+        float: right;
+        width: 90%;
+        height: 100%;
+        margin-top: 140px;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .author-about {
+        margin-top: 0px;
+    }
+
+}
