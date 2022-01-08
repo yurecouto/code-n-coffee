@@ -1,6 +1,6 @@
 # Code n coffee
 
-This template was made by Yure Couto, you can use it whichever way you prefer, since you have purchase it.
+This template was made by Yure Couto.
 
 Any Doubt, talk to me:
 Github: https://github.com/yurecouto
